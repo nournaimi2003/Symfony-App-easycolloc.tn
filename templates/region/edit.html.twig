@@ -1,0 +1,21 @@
+
+{% extends 'base.html.twig' %}
+{% block title %}Modifier Region{% endblock %}
+{% block body %}
+<center>
+<div class="card border-success" style="max-width: 25rem;display: flex;align-items: center;justify-content: center;margin-top: 150px; padding: 10px;">
+  <div class="card-header ">
+  <center><h3 style="color:primary">Edit region</h3></center></div>
+  <div class="card-body  py-4 mt-2 rounded">
+    {{ form_start(form) }}<br>
+{{ form_widget(form) }}<br>
+ <button type="submit" class="btn btn-primary">Edit</button>
+{{ form_end(form) }}
+  </div>
+</div>
+</center>
+{% endblock %}
+
+
+
+

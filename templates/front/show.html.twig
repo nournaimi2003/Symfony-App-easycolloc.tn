@@ -1,0 +1,28 @@
+{% extends 'base1.html.twig' %} 
+{% block title %}Show{% endblock %} 
+{% block body %} 
+<center>
+
+<div class="card  mb-3 my-5" style="max-width: 35rem;">
+ <a href="{{ path('app_index') }}"><i class="ri-arrow-left-circle-fill" style="font-size: 50px;"></i></a> 
+  <div class="card-header">
+  <h3>
+  Offre {{offres.description}}</h3>
+  </div>
+  <div class="card-body" style="width: 35rem, height: 20rem ; background-color:white";>
+    <img src="{{asset('uploads/' ~ offres.image)}}" class="img img-fluid w-65" alt="" style="width:25rem ; height:220px"><br><br>
+    <div  class="text-primary" style= "font-weight: bold;font-size: 1.5rem;">Prix {{ offres.prix }} D</div><br>
+    
+    
+     <p>216+ {{offres.numeroTel}}</p>
+    <p>Meuble : {{offres.meuble}}</p>
+     <p>Colloc_Occupe : {{offres.colocOccup}} Membres</p> 
+    <p>Surface : {{offres.surface}} Métre</p>
+    <p>Femeur : {{offres.femeur}}</p>
+    <p>Animaux : {{offres.animaux}}</p>
+  </div>
+</div>
+</center><br><br>
+
+
+{% endblock %} 

@@ -1,0 +1,27 @@
+{% extends 'base1.html.twig' %}
+
+{% block title %}offre{% endblock %}
+{% block body %}
+<br>
+<center>
+<h1>All offers </h1>
+  <div class= "container row ">
+{%  for offre in offres%}
+
+      <div class=" cart mb-6  col-md-3 p-0 m-5 ">
+                <div class="card" style="  box-shadow: #808181 5px 5px 10px;width: 50rem, height: 40rem ; background-color:white;">
+                  <img src="{{asset('uploads/' ~ offre.image)}}" class="img img-fluid w-50 mx-auto " alt="" style="width:300px ; height:150px">
+                    <div class="card-body  mx-auto ">
+                    
+                            <p>{{offre.description}}</p>
+                              <h4>{{offre.region.libelle }}</h4>
+                                <a href="/offre/{{ offre.id }}" class="btn btn-primary">Show</a>
+                    </div>
+                  
+                </div>
+              
+        </div>
+{% endfor %}
+</center><br><br>
+
+{% endblock %}

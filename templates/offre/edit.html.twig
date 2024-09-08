@@ -1,0 +1,49 @@
+
+{% extends 'base.html.twig' %}
+{% block title %}Ajouter Offre{% endblock %}
+{% block body %}
+<center>
+<div class="card border-success" style="max-width: 35rem;display: flex;align-items: center;justify-content: center;margin-top: 150px; padding: 10px;">
+  <div class="card-header ">
+  <center><h3 style="color:primary">Edit offre</h3></center></div>
+  <div class="card-body  py-4 mt-2 rounded">
+    {{ form_start(form) }}<br>
+    <div class="row">
+    <div class="col-md-4">{{form_row(form.type_offre)}}</div>
+    <div class="col-md-4">{{form_row(form.description)}}</div>
+        <div class="col-md-4">{{form_row(form.region)}}</div>
+    
+    </div>
+    <div class="row">
+    <div class="col-md-4">{{form_row(form.surface)}}</div>
+    <div class="col-md-4">{{form_row(form.prix)}}</div>
+    <div class="col-md-4">{{form_row(form.numeroTel)}}</div>
+    </div>
+    <div class="row">
+    
+    </div>
+    <div class="row">
+      <div class="col-md-4">{{form_row(form.meuble)}}</div>
+    <div class="col-md-4">{{form_row(form.animaux)}}</div>
+    <div class="col-md-4">{{form_row(form.femeur)}}</div>
+    </div>
+  
+    <div class="row">
+    <div class="col-md-4">{{form_row(form.coloc_occup)}}</div>
+      <div class="col-md-4">{{form_row(form.date_creation)}}</div>
+    </div>
+    {# <div class="col-md-4">{{form_row(form.image)}}</div> #}
+    
+    </div>
+    <center>
+    <center>
+ <button type="submit" class="btn btn-primary">Edit</button>
+{{ form_end(form) }}
+  </div>
+</div>
+</center>
+{% endblock %}
+
+
+
+

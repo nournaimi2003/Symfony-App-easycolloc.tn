@@ -1,0 +1,74 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+<div class="row" style="display: flex;align-items: center;justify-content: center;margin-top: 120px;">
+
+    <div class="col-lg-6">
+
+        <div class="card">
+            <div class="card-body">
+            
+                 <a href="{{ path('newOffre') }}"><i class="ri-arrow-left-circle-fill" style="font-size: 50px;"></i></a> 
+                 {{ form_start(form) }} 
+ 
+               <div class="form-row align-items-end" > 
+               <div class="row">
+          <div class="col-md-4"> 
+          {{ form_row(form.region) }} 
+          </div>
+
+            <div class="col-md-4 my-4"> 
+            <button type="submit" class="btn btn-success">Rechercher</button> 
+           </div> 
+           </div>
+{#  
+     <div class="col"> 
+     <div class="form-group"> 
+    
+    </div> 
+     </div>  #}
+     </div> 
+           {{ form_end(form) }} 
+               {% if offres %} 
+                <h5 class="card-title">Liste des offres</h5>
+
+                <!-- Table with stripped rows -->
+                <table class="table table-striped">
+                    <thead>
+                    <tr> <th>Offre</th>
+                        <th>Region</th>
+                        <th>Détail</th>
+                        <th>Modification</th>
+                        <th>Suppression</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for offre in offres%}
+                        <tr>
+                        <td>{{offre.description}}</td>
+                            <td>{{ offre.region.libelle}}</td>
+                            <td>
+                             <a href="/offres/{{ offre.id }}" class="btn btn-primary">Détails</a>
+                             </td>
+                            <td>
+                                <a class="btn btn-success" href="{{ path('edit_offre',{'id':offre.id}) }}">Modifier</a> 
+                            </td>
+                            <td>
+                                 <a href="/offre/delete/{{offre.id}}" onclick="return confirm('Etes vous sûr de supprimer ce offre?');" class="btn btn-danger">Supprimer</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+                <!-- End small tables -->
+            </div>
+        </div>
+        {% else %} 
+    <p>Aucun offres</p> 
+    </div>
+</div>
+ 
+  {% endif %} 
+{% endblock %}

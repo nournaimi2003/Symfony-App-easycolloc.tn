@@ -1,0 +1,20 @@
+
+{% extends 'base.html.twig' %}
+{% block title %}Inscription{% endblock %}
+{% block body %}
+<div class="m-5">
+<center>
+
+<div class="card mb-1" style="max-width: 29rem ; box-shadow: #808181 5px 5px 10px">
+  <div class="card-header bg-light">
+  <center><h3>Inscription</h3></center></div>
+  <div class="card-body  py-4 mt-2 rounded">
+{{ form_start(form) }}<br>
+{{ form_widget(form) }}<br>
+ <button type="submit" class="btn btn-primary">Inscription</button>
+{{ form_end(form) }}
+  </div>
+</div>
+</center>
+</div>
+{% endblock %}
